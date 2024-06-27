@@ -24,13 +24,6 @@ public class BGMAudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-        // Startメソッドで初期音量を設定する必要がなくなった
-        // targetVolume = 0.2f; 
-    }
-
     public void PlayBGM(AudioClip clip)
     {
         if (audioSource.isPlaying && audioSource.clip == clip)

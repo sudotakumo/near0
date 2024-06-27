@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class ResultBackgroundManager1 : MonoBehaviour
 {
     public Sprite Score50Background; // 低スコア時の背景
@@ -13,8 +11,7 @@ public class ResultBackgroundManager1 : MonoBehaviour
     private float textureUnitSizeY;
     private Vector2 startPos;
     SpriteRenderer spriteRenderer;
-    public Text scoreText; // スコアを表示するテキスト
-    public GameObject zeroScoreEffectPrefab; // スコアが0のときのエフェクト用プレハブ
+    public GameObject zeroScoreBackgroundObject; // スコアが0のときに表示する背景オブジェクト
 
     private void Start()
     {
@@ -26,28 +23,22 @@ public class ResultBackgroundManager1 : MonoBehaviour
         if (score == 0)
         {
             spriteRenderer.sprite = jast0Background;
-            scoreText.gameObject.SetActive(false); // スコアテキストを非表示
-
-            // スコアが0のときのエフェクトを生成して表示
-            if (zeroScoreEffectPrefab != null)
-            {
-                Instantiate(zeroScoreEffectPrefab, transform.position, Quaternion.identity);
-            }
+            zeroScoreBackgroundObject.AddComponent<ShakeEffect>(); // 揺らしのエフェクトを追加
         }
         else if (Mathf.Abs(score) < 50)
         {
             spriteRenderer.sprite = Score50Background;
-            scoreText.text = "Score: " + score.ToString();
+
         }
         else if (Mathf.Abs(score) < 100)
         {
             spriteRenderer.sprite = Score100Background;
-            scoreText.text = "Score: " + score.ToString();
+
         }
         else
         {
             spriteRenderer.sprite = highScoreBackground;
-            scoreText.text = "Score: " + score.ToString();
+
         }
     }
 

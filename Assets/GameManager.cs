@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
     private long score = 0; // スコアをlong型に変更
     public int minInitialScore = 1; // 初期スコアの最小値
     public int maxInitialScore = 100; // 初期スコアの最大値
-    public float delayBeforeResult = 1f; // リザルトシーンに移行する前の遅延時間
     public AudioClip startBGM;
     public AudioClip gameBGM;
     public AudioClip resultBGM;
+    public AudioClip score0BGM;
 
     private void Awake()
     {
@@ -93,13 +93,19 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         PlayerPrefs.SetInt("FinalScore", (int)score); // スコアを保存
-        StartCoroutine(WaitAndLoadResultScene());
+        LoadResultScene();
     }
 
-    private IEnumerator WaitAndLoadResultScene()
+    private void LoadResultScene()
     {
-        yield return new WaitForSeconds(delayBeforeResult);
-        BGMAudioManager.Instance.PlayBGM(resultBGM); // リザルトシーンのBGMを再生
+        if ( PlayerPrefs.GetInt("FinalScore")== 0)
+        {
+            BGMAudioManager.Instance.PlayBGM(score0BGM); // score0のBGMを再生
+        }
+        else
+        {
+            BGMAudioManager.Instance.PlayBGM(resultBGM); // リザルトシーンのBGMを再生
+        }
         FadeManager.Instance.LoadScene("ResultScene");
     }
 

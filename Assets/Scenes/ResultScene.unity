@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 173668202}
   - component: {fileID: 173668204}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ResultM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -523,8 +523,7 @@ MonoBehaviour:
   highScoreBackground: {fileID: 21300000, guid: b94a540a3c18bf740bf9ef219b02f751, type: 3}
   jast0Background: {fileID: 21300000, guid: a45e547a37aeef14e81fe46984863914, type: 3}
   scrollSpeed: 1
-  scoreText: {fileID: 1373227575}
-  zeroScoreEffectPrefab: {fileID: 0}
+  zeroScoreBackgroundObject: {fileID: 842831840}
 --- !u!1 &1329900095
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +628,7 @@ GameObject:
   - component: {fileID: 1373227576}
   - component: {fileID: 1373227575}
   m_Layer: 5
-  m_Name: scoreText
+  m_Name: resultScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,51 +800,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1671159806
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1671159808}
-  - component: {fileID: 1671159807}
-  m_Layer: 0
-  m_Name: effect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1671159807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671159806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fbcc4e08987e914f9ab75effad049dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zeroScoreImage: {fileID: 1788751442}
---- !u!4 &1671159808
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671159806}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788751440
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +812,7 @@ GameObject:
   - component: {fileID: 1788751443}
   - component: {fileID: 1788751442}
   - component: {fileID: 1788751444}
+  - component: {fileID: 1788751445}
   m_Layer: 0
   m_Name: zero
   m_TagString: Untagged
@@ -936,7 +891,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateX: 0
   rotateY: 0
-  rotateZ: -1150
+  rotateZ: -900
+--- !u!114 &1788751445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788751440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea7d35f82e9b4b4ba73994f8acff084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1965588788
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +915,7 @@ GameObject:
   - component: {fileID: 1965588791}
   - component: {fileID: 1965588790}
   - component: {fileID: 1965588792}
+  - component: {fileID: 1965588793}
   m_Layer: 0
   m_Name: background1
   m_TagString: Untagged
@@ -1039,8 +1007,22 @@ MonoBehaviour:
   highScoreBackground: {fileID: 21300000, guid: b94a540a3c18bf740bf9ef219b02f751, type: 3}
   jast0Background: {fileID: 21300000, guid: 79314b2523c92ac48994f9a1b66614ce, type: 3}
   scrollSpeed: 1
-  scoreText: {fileID: 1373227575}
-  zeroScoreEffectPrefab: {fileID: 0}
+  zeroScoreBackgroundObject: {fileID: 1965588788}
+--- !u!114 &1965588793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965588788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d185c11e11fa1b44bd4da8d3ee2005a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultScore: {fileID: 1373227575}
+  key: {fileID: 62684359}
+  zeroScoreImageObject: {fileID: 1788751440}
 --- !u!1001 &2062742266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1179,10 +1161,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1329900098}
+  - {fileID: 173668203}
   - {fileID: 1965588791}
   - {fileID: 842831843}
   - {fileID: 2099981189}
   - {fileID: 1560540213}
   - {fileID: 2062742266}
-  - {fileID: 173668203}
-  - {fileID: 1671159808}

@@ -3,7 +3,13 @@ guid: 2887d34b4c65f1c43b2e87aaf84da894
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scoreText: {instanceID: 0}
+  - timerText: {instanceID: 0}
+  - startBGM: {fileID: 8300000, guid: 715fefc3a8cd7c944ab0417aa4d11d37, type: 3}
+  - gameBGM: {fileID: 8300000, guid: 5a0128f8257a5ee4bbd426bc482d3698, type: 3}
+  - resultBGM: {fileID: 8300000, guid: 715fefc3a8cd7c944ab0417aa4d11d37, type: 3}
+  - score0BGM: {fileID: 8300000, guid: 8f779492ac8320f4cb5f9c7aa50618c4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
