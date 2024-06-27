@@ -497,7 +497,7 @@ MonoBehaviour:
   timerText: {fileID: 479439015}
   gameDuration: 20
   minInitialScore: -100
-  maxInitialScore: -100
+  maxInitialScore: 100
   startBGM: {fileID: 8300000, guid: 715fefc3a8cd7c944ab0417aa4d11d37, type: 3}
   gameBGM: {fileID: 8300000, guid: 5a0128f8257a5ee4bbd426bc482d3698, type: 3}
   resultBGM: {fileID: 8300000, guid: 715fefc3a8cd7c944ab0417aa4d11d37, type: 3}
