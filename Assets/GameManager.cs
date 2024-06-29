@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Text timerText; // タイマーを表示するUIテキスト
     public float gameDuration = 20f; // ゲームの継続時間
     private float remainingTime;
-    private long score = 0; // スコアをlong型に変更
+    private int score = 0; // スコアをlong型に変更
     public int minInitialScore = 1; // 初期スコアの最小値
     public int maxInitialScore = 100; // 初期スコアの最大値
     public AudioClip startBGM;
@@ -80,6 +80,18 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    public void SetScoreToZero()
+    {
+        score = 0;
+        Debug.Log("Score has been set to zero!"); // スコアを0に設定したことをログに出力
+        UpdateScoreText();
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
     private void UpdateScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
@@ -98,7 +110,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadResultScene()
     {
-        if ( PlayerPrefs.GetInt("FinalScore")== 0)
+        if (PlayerPrefs.GetInt("FinalScore") == 0)
         {
             BGMAudioManager.Instance.PlayBGM(score0BGM); // score0のBGMを再生
         }

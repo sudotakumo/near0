@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScore: 1
   maxScore: 100
+  probabilityToZeroScore: 10

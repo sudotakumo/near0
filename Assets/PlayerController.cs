@@ -4,8 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector3 mid = new Vector3(0, -2, 0);
-    private Vector3 left = new Vector3(-5, -2, 0);
-    private Vector3 right = new Vector3(5, -2, 0);
+    private Vector3 left = new Vector3(-3, -2, 0);
+    private Vector3 right = new Vector3(3, -2, 0);
     public AudioClip moveSE; // 移動の際に再生する効果音
     private AudioSource audioSource; // AudioSourceコンポーネント
     private KeyCode lastKeyPressed; // 最後に押されたキーを記憶
